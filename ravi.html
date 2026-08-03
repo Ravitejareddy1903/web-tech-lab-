@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Personal Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+}
+
+header{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+nav{
+    background:#1565c0;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+}
+
+section{
+    background:white;
+    margin:20px 0;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+h2{
+    color:#0d47a1;
+    margin-bottom:15px;
+}
+
+p{
+    margin:10px 0;
+    line-height:1.6;
+}
+
+.profile{
+    display:block;
+    margin:auto;
+    border-radius:50%;
+    border:5px solid #1565c0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table,th,td{
+    border:1px solid black;
+}
+
+th{
+    background:#1565c0;
+    color:white;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+progress{
+    width:100%;
+    height:20px;
+}
+
+fieldset{
+    border:2px solid #1565c0;
+    padding:20px;
+}
+
+legend{
+    color:#0d47a1;
+    font-size:20px;
+    font-weight:bold;
+}
+
+label{
+    font-weight:bold;
+}
+
+input,select,textarea{
+
+    width:100%;
+    padding:8px;
+    margin:8px 0 15px;
+
+}
+
+input[type=radio],
+input[type=checkbox]{
+
+    width:auto;
+
+}
+
+input[type=submit],
+input[type=reset]{
+
+    width:120px;
+    background:#1565c0;
+    color:white;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+
+}
+
+iframe,
+video,
+embed{
+
+    width:100%;
+    max-width:700px;
+    display:block;
+    margin:auto;
+
+}
+
+footer{
+
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- Header Section -->
+
+<header>
+
+<h1>My Personal Portfolio</h1>
+
+<p>HTML5 Portfolio Website</p>
+
+</header>
+
+
+
+<!-- Navigation -->
+
+<nav>
+
+<a href="#about">About</a>
+
+<a href="#education">Education</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#media">Media</a>
+<!-- Skills Section -->
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<p>HTML</p>
+<progress value="95" max="100"></progress>
+
+<p>CSS</p>
+<progress value="90" max="100"></progress>
+
+<p>JavaScript</p>
+<progress value="80" max="100"></progress>
+
+<p>Python</p>
+<progress value="85" max="100"></progress>
+
+</section>
+
+
+<!-- ADD MEDIA SECTION HERE -->
+
+<section id="media">
+
+<h2>Audio</h2>
+
+<audio controls>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+</audio>
+
+
+<br><br>
+
+
+<h2>Video</h2>
+
+<video controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support video.
+</video>
+
+
+<br><br>
+
+
+<h2>Embedded PDF Image</h2>
+
+<img
+src="https://techterms.com/img/lg/pdf_109.png"
+alt="PDF Image"
+style="width:100%; height:650px; object-fit:contain;">
+
+
+<br><br>
+
+
+<h2>HTML Tutorial</h2>
+
+<iframe
+width="700"
+height="450"
+src="https://www.youtube.com/embed/qz0aGYrrlhU"
+title="HTML Tutorial"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+
+<br><br>
+
+
+<h2>My Location</h2>
+
+<iframe
+src="https://www.google.com/maps?q=Chennai&output=embed"
+height="350">
+</iframe>
+
+
+</section>
+<!-- Contact Form Section -->
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<form action="/action_page.php" method="get">
+
+<fieldset>
+
+<legend>Personal Information</legend>
+
+
+<label for="name">Full Name:</label>
+<input type="text" id="name" name="name" placeholder="Enter your name">
+
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" placeholder="Enter your email">
+
+
+<label for="password">Password:</label>
+<input type="password" id="password" name="password">
+
+
+<label for="phone">Phone Number:</label>
+<input type="tel" id="phone" name="phone">
+
+
+<label>Date of Birth:</label>
+<input type="date" name="dob">
+
+
+<label>Gender:</label><br>
+
+<input type="radio" name="gender" value="male">
+Male
+
+<input type="radio" name="gender" value="female">
+Female
+
+<input type="radio" name="gender" value="other">
+Other
+
+
+<br><br>
+
+
+<label>Skills:</label><br>
+
+<input type="checkbox" name="skill" value="HTML">
+HTML
+
+<input type="checkbox" name="skill" value="CSS">
+CSS
+
+<input type="checkbox" name="skill" value="JavaScript">
+JavaScript
+
+<input type="checkbox" name="skill" value="Python">
+Python
+
+
+<br><br>
+
+
+<label for="department">
+Department:
+</label>
+
+<select id="department">
+
+<option>Computer Science</option>
+<option>Information Technology</option>
+<option>Artificial Intelligence</option>
+<option>Electronics</option>
+
+</select>
+
+
+
+<label for="resume">
+Upload Resume:
+</label>
+
+<input type="file" id="resume">
+
+
+
+<label for="experience">
+Experience:
+</label>
+
+<input type="number" id="experience" placeholder="Years">
+
+
+
+<label for="website">
+Portfolio Website:
+</label>
+
+<input type="url" id="website" placeholder="https://example.com">
+
+
+
+<label for="search">
+Search:
+</label>
+
+<input type="search" id="search">
+
+
+
+<label for="message">
+Message:
+</label>
+
+<textarea id="message" rows="5" cols="40"
+placeholder="Enter your message">
+</textarea>
+
+
+
+<input type="submit" value="Submit">
+
+<input type="reset" value="Reset">
+
+
+</fieldset>
+
+</form>
+
+</section>
+
+
+
+<!-- Contact Form Section comes after this -->
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<!-- Your form code goes here -->
+
+</section>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+
+<div class="container">
+
+
+
+<!-- About Section -->
+
+<section id="about">
+
+
+<h2>About Me</h2>
+
+
+<img class="profile"
+src="https://picsum.photos/200"
+width="200"
+height="200"
+alt="Profile Image">
+
+
+<p>
+
+Hello! I am John Doe, a Computer Science student interested in
+Web Development, Programming and Software Engineering.
+
+</p>
+
+
+<p>
+
+I create websites using HTML5, CSS and JavaScript.
+
+</p>
+
+
+<h3>My Links</h3>
+
+
+<p>
+
+<a href="https://github.com/" target="_blank">
+GitHub Profile
+</a>
+
+</p>
+
+
+<p>
+
+<a href="https://www.linkedin.com/" target="_blank">
+LinkedIn Profile
+</a>
+
+</p>
+
+
+<p>
+
+<a href="https://www.w3schools.com/" target="_blank">
+W3Schools
+</a>
+
+</p>
+
+
+</section>
