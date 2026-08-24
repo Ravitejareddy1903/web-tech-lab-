@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Raviteja Reddy - Personal Portfolio</title>
+  <style>
+    /* CSS Reset & Adaptive Box Sizing */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: georgia, garamond, serif;
+      background-color: lightblue;
+      color: #333333;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    /* Main Container with fluid width */
+    .main-container {
+      width: 100%;
+      max-width: 1100px;
+      background-color: #ffffff;
+      border: 1px solid #999999;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* HEADER: Flex layout with auto-wrap */
+    header {
+      background-color: #8a2be2;
+      padding: clamp(12px, 2vw, 20px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .profile-img {
+      width: clamp(65px, 8vw, 85px);
+      height: clamp(65px, 8vw, 85px);
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
+    }
+
+    .header-title {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: bolder;
+      letter-spacing: clamp(2px, 0.5vw, 5px);
+      text-shadow: 4px 4px 8px blue;
+      color: #ffffff;
+      text-align: center;
+      flex: 1 1 220px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      height: 32px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    /* NAVIGATION BAR: Flex & Wrap */
+    nav {
+      background-color: #d8bfd8;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style-type: circle;
+      padding: 10px 15px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    /* Link Pseudo-classes from Exp 3 */
+    a:link {
+      background-color: yellow;
+      color: #000000;
+      text-decoration: underline;
+      padding: 6px 12px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      border-radius: 3px;
+    }
+
+    a:visited {
+      background-color: cyan;
+      color: #000000;
+    }
+
+    a:hover {
+      background-color: lightgreen;
+      color: #000000;
+    }
+
+    a:active {
+      background-color: hotpink;
+      color: #ffffff;
+    }
+
+    /* SECTION 1: PERSONAL INTRO */
+    .intro-container {
+      background-color: #008080;
+      padding: clamp(15px, 3vw, 30px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .intro-text-box {
+      flex: 1 1 300px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 2px dashed #ffffff;
+      padding: clamp(12px, 2vw, 20px);
+      color: #ffffff;
+      font-style: italic;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      text-align: justify;
+      border-radius: 4px;
+    }
+
+    .intro-graphic-box {
+      flex: 1 1 300px;
+      background-color: #005f5f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: bold;
+      letter-spacing: 2px;
+      min-height: 120px;
+      text-align: center;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    /* SECTION 2: ACADEMIC SKILLS GRID */
+    .skills-section {
+      background-color: #eaeaea;
+      padding: clamp(20px, 3vw, 35px) 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .skill-card {
+      width: 100%;
+      max-width: 180px;
+      min-height: 130px;
+      background-color: #1e3d59;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border: 2px solid #17223b;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .skill-card .skill-symbol {
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      font-weight: bolder;
+      margin: auto 0;
+      padding: 10px 0;
+    }
+
+    .skill-card .skill-label {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      font-weight: bold;
+      background-color: #17223b;
+      width: 100%;
+      text-align: center;
+      padding: 6px 0;
+    }
+
+    /* SECTION 3: MENTORS / FAMILY GRID */
+    .family-section {
+      background-color: #1b4965;
+      padding: clamp(20px, 3vw, 35px) 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      align-items: start;
+    }
+
+    .family-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .family-circle {
+      width: clamp(90px, 12vw, 110px);
+      height: clamp(90px, 12vw, 110px);
+      border-radius: 50%;
+      border: 4px solid #5fa8d3;
+      background-color: #62b6cb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .family-card h4 {
+      color: #90e0ef;
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 8px;
+    }
+
+    .family-card p {
+      color: #ffffff;
+      font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+      font-style: italic;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* SECTION 4: FOOTER */
+    footer {
+      background-color: #ffe5b4;
+      color: #333333;
+      padding: 15px;
+      font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+      border-top: 2px solid #d4a373;
+    }
+
+    .demo-margin-p {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      margin-right: 15px;
+      margin-left: 10px;
+      color: green;
+    }
+
+    /* TABLET & MOBILE RESPONSIVE TWEAKS */
+    @media (max-width: 768px) {
+      body {
+        padding: 5px;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .social-links {
+        margin-top: 5px;
+      }
+
+      nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      a:link {
+        padding: 5px 8px;
+      }
+
+      .skills-section {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .family-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* SMALL MOBILE PHONES */
+    @media (max-width: 420px) {
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+
+      nav ul li a {
+        display: block;
+        width: 100%;
+      }
+
+      .skills-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-container">
+    <!-- Header with Profile Photo -->
+    <header>
+      <img src="c:\Users\Hp\Downloads\WhatsApp Image 2026-08-24 at 9.44.32 PM.jpeg" alt="Raviteja Reddy" class="profile-img" />
+      <div class="header-title">Mr. Raviteja Reddy</div>
+      <div class="social-links">
+        <a href="#">f</a>
+        <a href="#">t</a>
+        <a href="#">in</a>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#personal">Personal</a></li>
+        <li><a href="#academic">Academic</a></li>
+        <li><a href="#activity">Activity</a></li>
+        <li><a href="#others">Others</a></li>
+      </ul>
+    </nav>
+
+    <!-- Section 1: Personal Intro (Multi-column / Normal flow) -->
+    <section class="intro-container" id="personal">
+      <div class="intro-text-box">
+        Hello! I am Raviteja Reddy, a passionate web developer and tech enthusiast. I build modern, fully responsive web applications across mobile, tablet, and desktop environments using full-stack web technologies.
+      </div>
+      <div class="intro-graphic-box">
+        Personal Portfolio &amp; Bio
+      </div>
+    </section>
+
+    <!-- Section 2: Academic Skills (CSS Grid Auto-Fit) -->
+    <section class="skills-section" id="academic">
+      <div class="skill-card">
+        <div class="skill-symbol">5</div>
+        <div class="skill-label">HTML5</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-symbol">3</div>
+        <div class="skill-label">CSS3</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-symbol">JS</div>
+        <div class="skill-label">Javascript</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-symbol">php</div>
+        <div class="skill-label">PHP</div>
+      </div>
+    </section>
+
+    <!-- Section 3: Mentors / Family -->
+    <section class="family-section" id="activity">
+      <div class="family-card">
+        <div class="family-circle">Father</div>
+        <h4>Mr. RAJA SHEKAR REDDY</h4>
+        <p>It was my father who taught me to value myself. He told me that hard work, honesty, and perseverance are the keys to building a successful life.</p>
+      </div>
+      <div class="family-card">
+        <div class="family-circle">Mother</div>
+        <h4>Mrs. MEENA KUMARI</h4>
+        <p>My mother taught me that we all have the power to achieve our dreams through patience and determination.</p>
+      </div>
+      <div class="family-card">
+        <div class="family-circle">Sibling</div>
+        <h4>VARUN REDDY</h4>
+        <p>A sibling is both your mirror and your constant support through every challenge.</p>
+      </div>
+    </section>
+
+    <!-- Section 4: Footer -->
+    <footer id="others">
+      <p class="demo-margin-p"><strong>Address:</strong> Department of Computer Science &amp; Engineering, Web Technology Lab</p>
+      <p style="text-align: center; margin-top: 6px;">&copy; 2026 Raviteja Reddy (Register Number: URK24CS6015) - Web Technology Lab Batch 1. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
